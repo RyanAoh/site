@@ -1,0 +1,99 @@
+html,
+body {
+	height: 100%;
+	background-color: #999999;
+	background-image: url(../img/home.img);
+}
+.home_content {
+	height: 100%;
+	padding-top:20%;
+	text-align: center;
+}
+
+.home_header a {
+	font-family: "华文行楷";
+	text-decoration:none; 
+	color: black;
+}
+
+.menu-list {
+	padding-top: 3em;
+}
+
+a {
+	color: white;
+}
+
+.latest-list {
+	padding-top: 3em;
+	padding-left: 6em;
+	text-align: left;
+}
+
+li {
+	list-style:none;
+}
+
+.contact-list {
+	padding-top: 5em;
+}
+
+.contact-list img {
+	height: 18px;
+	width: 18px;
+	color: white;
+}
+
+.footer {
+	color: #fff;
+	font-size: 0.7em;
+	padding-top: 3em; 
+}
+
+.content .menu-list {
+	padding-top: 0;
+}
+
+.content .menu-list h3 {
+	display: inline-block;
+	padding-right: 1em;
+}
+
+.content .contact-list,
+.content .footer {
+	text-align: center;
+}
+
+.post-title {
+    font-size: 1.3em;
+    color: #222;
+    margin-bottom: 0.2em;
+}
+.post-avatar {
+    border-radius: 50px;
+    float: right;
+    margin-left: 1em;
+}
+.post-description {
+    font-family: Georgia, "Cambria", serif;
+    color: #444;
+    line-height: 1.8em;
+}
+.post-meta {
+    color: #999;
+    font-size: 90%; 
+    margin: 0;
+    color: #444;
+}
+
+.post-category {
+    margin: 0 0.1em;
+    padding: 0.1em 1em;
+    color: #fff;
+    background: rgb(196, 195, 195);
+    font-size: 70%;
+}
+
+.pull-right {
+	float: right;
+}
