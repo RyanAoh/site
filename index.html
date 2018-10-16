@@ -28,7 +28,10 @@
 	
 	<link rel="stylesheet" href="css/menu.css">
 	<script src="js/jquery1111.min.js" type="text/javascript"></script>
-	<script src="js/script.js"></script>
+	<!-- <script src="js/script.js"></script> -->
+	<script src="js/vue.js"></script>
+	<script src="js/axios.min.js"></script>
+	<script src="js/mock.js"></script>
 	
 	
 	<!--[if lt IE 8]>
@@ -83,39 +86,26 @@
 			<div class="wrap-container">
 				<div id="main-content">
 					<div class="wrap-content">
-						<div class="zerogrid">
-							<div class="row">
-								<div class="col-1">
-									<article>
-										<div class="entry-header ">
-											<h3 class="entry-title">Vital Films presents INSIGHT</h3>
-											<div class="l-tags">发表于:2018-9-30 18:00:00 / 分类:<a href="#">Illustrations</a> / 阅读数:90</div>
-										</div>
-										<div class="post-thumbnail-wrap">
-											<a href="single.html" class="portfolio-box">
-												<div class="project-text">
-													Art and design have always been related, but today, experimentation and personal expression are the name of the game. Homeowners are using art to make a personal statement – your art choice has ...
-												</div>
-													
-											</a>
-										</div>
-									</article>
-									<article>
-										<div class="entry-header ">
-											<h3 class="entry-title">Vital Films presents INSIGHT</h3>
-											<div class="l-tags"><a href="#">Design</a> / <a href="#">Illustrations</a> / <a href="#">Typography</a></div>
-										</div>
-										<div class="post-thumbnail-wrap">
-											<a href="single.html" class="portfolio-box">
-												<div class="project-text">
-													Art and design have always been related, but today, experimentation and personal expression are the name of the game. Homeowners are using art to make a personal statement – your art choice has ...
-												</div>
-													
-											</a>
-										</div>
-									</article>
+						<div class="zerogrid" id="artiles">
+							<article v-for="article in articles">
+								<div class="entry-header ">
+									<h3 class="entry-title">{{article.title}}</h3>
+									<div class="l-tags">发表于:{{article.pub_time}} / 分类:<a href="#">{{article.category.name}}</a>  /  阅读数:{{article.read_num}}</div>
 								</div>
-							</div>
+								<div class="post-thumbnail-wrap">
+									<a href="single.html" class="portfolio-box">
+										<div class="project-text">
+											{{article.article.substr(0,300)}}...
+										</div>
+									</a>
+									<div class="l-tags">
+										标签:
+										<span v-for="tag in article.tag">
+											<a :href="'blog/tag/'+tag.name">{{tag.name}}</a>、
+										</span>
+									</div>
+								</div>
+							</article>
 						</div>
 					</div>
 				</div>
@@ -137,27 +127,11 @@
 					</div>
 				</div>
 				<div class="copyright">
-					Copyright @ - Designed by <a href="https://www.html5xcss3.com">HTML5xCSS3</a>
+					Copyright @<a href="">Yang Aohan</a>. All rights reserved - Designed with <a href="https://www.html5xcss3.com">HTML5xCSS3</a>
 				</div>
 			</div>
 		</footer>
-		<!-- carousel -->
-		<script src="owl-carousel/owl.carousel.js"></script>
-		<script>
-		$(document).ready(function() {
-		  $("#owl-slide").owlCarousel({
-			autoPlay: 3000,
-			items : 1,
-			itemsDesktop : [1199,1],
-			itemsDesktopSmall : [979,1],
-			itemsTablet : [768, 1],
-			itemsMobile : [479, 1],
-			navigation: true,
-			navigationText: ['<i class="fa fa-chevron-left fa-5x"></i>', '<i class="fa fa-chevron-right fa-5x"></i>'],
-			pagination: false
-		  });
-		});
-		</script>
 	</div>
 </body>
+<script src="js/script.js"></script>
 </html>

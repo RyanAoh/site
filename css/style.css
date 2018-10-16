@@ -103,6 +103,7 @@ article .post-thumbnail-wrap {text-align: center;width: 100%;margin-bottom: 10px
 article .post-thumbnail-wrap img {}
 article h3.entry-title{font-size: 20px;margin: 10px 0 5px;font-weight: 500;letter-spacing: 1px;color: #222;}
 article .l-tags{text-align: center; font-size: 11px;}
+article .l-tags a{color: #3F3F3F; text-decoration:underline;}
 
 article .entry-header{text-align: center;}
 article.single-post .entry-header{padding: 40px 0;}
@@ -122,7 +123,7 @@ article .entry-content ol {float: left;text-align: justify;margin: 10px 50px;fon
 /* -------------------------------------Footer--------------------------------- */
 /* ---------------------------------------------------------------------------- */
 footer{text-align: center;padding: 40px 0;border-top: 1px solid #bbb;margin-top: 40px;}
-footer a{color:#444;font-weight: bold;}
+footer a{color:#444;}
 footer a:hover{color:#000;}
 footer .wrap-footer{color: #92907C;}
 footer .wrap-footer ul li {margin-bottom: 5px;border-bottom: 1px solid #555;padding: 10px 0 15px;}
