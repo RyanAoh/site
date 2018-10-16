@@ -1,3 +1,30 @@
+<?php
+// Free html5 templates : http://www.html5xcss3.com
+
+$text = "<span style='color:red; font-size: 35px; line-height: 40px; magin: 10px;'>Error! Please try again.</span>";
+
+if(isset($_POST['submitcontact']))
+{
+	$name=$_POST['name'];
+	$email=$_POST['email'];
+	$message=$_POST['message'];
+	$subject=$_POST['subject'];
+
+	$to = "youremail@gmail.com";
+	$subject = "Html5xcss3 - Testing Contact Form";
+	$message = " Name: " . $name ."\r\n Email: " . $email . "\r\n Message:\r\n" . $message;
+	 
+	$from = "Html5xcss3 dot com";
+	$headers = "From:" . $from . "\r\n";
+	$headers .= "Content-type: text/plain; charset=UTF-8" . "\r\n"; 
+	 
+	if(@mail($to,$subject,$message,$headers))
+	{
+	  $text = "<span style='color:blue; font-size: 35px; line-height: 40px; margin: 10px;'>Your Message was sent successfully !</span>";
+	}
+}
+?>
+
 <!DOCTYPE html>
 <!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
 <!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
@@ -20,7 +47,6 @@
 	================================================== -->
   	<link rel="stylesheet" href="css/zerogrid.css">
 	<link rel="stylesheet" href="css/style.css">
-	<link rel="stylesheet" href="css/font-awesome.min.css">
 	
 	<!-- Custom Fonts -->
     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -30,6 +56,8 @@
 	<script src="js/jquery1111.min.js" type="text/javascript"></script>
 	<script src="js/script.js"></script>
 	
+	<!-- Owl Carousel Assets -->
+    <link href="owl-carousel/owl.carousel.css" rel="stylesheet">
 	
 	<!--[if lt IE 8]>
        <div style=' clear: both; text-align:center; position: relative;'>
@@ -49,7 +77,7 @@
 	<div class="wrap-body">
 		<div id='cssmenu' class="align-center">
 			<ul>
-			   <li class="active"><a href='index.html'><span>Home</span></a></li>
+			   <li><a href='index.html'><span>Home</span></a></li>
 			   <li class=' has-sub'><a href='#'><span>Blog</span></a>
 				  <ul >
 					 <li class='has-sub'><a href='#'><span>Item 1</span></a>
@@ -67,13 +95,13 @@
 				  </ul>
 			   </li>
 			   <li><a href='single.html'><span>About</span></a></li>
-			   <li class='last'><a href='contact.html'><span>Contacts</span></a></li>
+			   <li class='active last'><a href='contact.html'><span>Contacts</span></a></li>
 			</ul>
 		</div>
 		<header class="">
 			<div class="logo">
 				<hr class="line-1">
-				<a href="#">Aohan</a>
+				<a href="#">Vintauge</a>
 				<span>Lorem ipsum dolor sit amet</span>
 				<hr class="line-1">
 			</div>
@@ -81,44 +109,44 @@
 		<!--////////////////////////////////////Container-->
 		<section id="container">
 			<div class="wrap-container">
-				<div id="main-content">
-					<div class="wrap-content">
-						<div class="zerogrid">
-							<div class="row">
-								<div class="col-1">
-									<article>
-										<div class="entry-header ">
-											<h3 class="entry-title">Vital Films presents INSIGHT</h3>
-											<div class="l-tags">发表于:2018-9-30 18:00:00 / 分类:<a href="#">Illustrations</a> / 阅读数:90</div>
+				<!-----------------Content-Box-------------------->
+				<section class="content-box zerogrid">
+					<div class="row wrap-box"><!--Start Box-->
+						<h3 class="t-center">Contact Form</h3>
+						<!--Warning-->
+						<center><?php echo $text;?></center>
+						<!---->
+						<div id="contact_form">
+							<form name="form1" id="ff" method="post" action="contact.php">
+								<label class="row">
+									<div class="col-1-3">
+										<div class="wrap-col">
+											<input type="text" name="name" id="name" placeholder="Enter name" required="required" />
 										</div>
-										<div class="post-thumbnail-wrap">
-											<a href="single.html" class="portfolio-box">
-												<div class="project-text">
-													Art and design have always been related, but today, experimentation and personal expression are the name of the game. Homeowners are using art to make a personal statement – your art choice has ...
-												</div>
-													
-											</a>
+									</div>
+									<div class="col-1-3">
+										<div class="wrap-col">
+											<input type="email" name="email" id="email" placeholder="Enter email" required="required" />
 										</div>
-									</article>
-									<article>
-										<div class="entry-header ">
-											<h3 class="entry-title">Vital Films presents INSIGHT</h3>
-											<div class="l-tags"><a href="#">Design</a> / <a href="#">Illustrations</a> / <a href="#">Typography</a></div>
+									</div>
+									<div class="col-1-3">
+										<div class="wrap-col">
+											<input type="text" name="subject" id="subject" placeholder="Subject" required="required" />
 										</div>
-										<div class="post-thumbnail-wrap">
-											<a href="single.html" class="portfolio-box">
-												<div class="project-text">
-													Art and design have always been related, but today, experimentation and personal expression are the name of the game. Homeowners are using art to make a personal statement – your art choice has ...
-												</div>
-													
-											</a>
-										</div>
-									</article>
-								</div>
-							</div>
+									</div>
+								</label>
+								<label class="row">
+									<div class="wrap-col">
+										<textarea name="message" id="message" class="form-control" rows="4" cols="25" required="required"
+										placeholder="Message"></textarea>
+									</div>
+								</label>
+								<center><input class="sendButton" type="submit" name="submitcontact" value="Submit"></center>
+							</form>
 						</div>
 					</div>
-				</div>
+				</section>
+				
 			</div>
 		</section>
 		<!--////////////////////////////////////Footer-->
@@ -147,8 +175,8 @@
 		$(document).ready(function() {
 		  $("#owl-slide").owlCarousel({
 			autoPlay: 3000,
-			items : 1,
-			itemsDesktop : [1199,1],
+			items : 2,
+			itemsDesktop : [1199,2],
 			itemsDesktopSmall : [979,1],
 			itemsTablet : [768, 1],
 			itemsMobile : [479, 1],
