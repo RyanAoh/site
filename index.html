@@ -90,12 +90,12 @@
 							<article v-for="article in articles">
 								<div class="entry-header ">
 									<h3 class="entry-title">{{article.title}}</h3>
-									<div class="l-tags">发表于:{{article.pub_time}} / 分类:<a href="#">{{article.category.name}}</a>  /  阅读数:{{article.read_num}}</div>
+									<div class="l-tags">发表于:{{article.pub_time}} / 分类:<a href="#">{{article.category.name}}</a>  /  阅读数:{{article.reading}}</div>
 								</div>
 								<div class="post-thumbnail-wrap">
 									<a href="single.html" class="portfolio-box">
 										<div class="project-text">
-											{{article.article.substr(0,300)}}...
+											{{article.content.substr(0,300)}}...
 										</div>
 									</a>
 									<div class="l-tags">
@@ -134,4 +134,5 @@
 	</div>
 </body>
 <script src="js/script.js"></script>
+<script src="js/mymock.js"></script>
 </html>
